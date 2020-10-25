@@ -1,0 +1,26 @@
+<div *ngIf='dogs.length > 0'>
+  <div *ngFor='let dog of dogs'>
+    <p>{{dog.name}}</p>
+    <img src="{{dog.image}}" alt="">
+    <p>{{dog.description}}</p>
+  </div>
+  <div>
+    <p>Add Doggo</p>
+    <input type="text" [(ngModel)]="formName" placeholder="name">
+    <input type="text" [(ngModel)]="formImage" placeholder="image">
+    <input type="text" [(ngModel)]="formAge" placeholder="age">
+    <input type="text" [(ngModel)]="formDesc" placeholder="description">
+    <button (click)='addDog()'>Add Your Doggo</button>
+  </div>
+  <div>
+    <p>Update Doggo Name</p>
+    <input type="text" [(ngModel)]="updateFormName" placeholder="old name">
+    <input type="text" [(ngModel)]="updateToFormName" placeholder="new name">
+    <button (click)='updateDog()'>Update Your Doggo</button>
+  </div>
+  <div>
+    <p>Delete a Doggo by Name</p>
+    <input type="text" [(ngModel)]="deleteFormName" placeholder="name">
+    <button (click)='removeDog()'>Delete Your Doggo</button>
+  </div>
+</div>
